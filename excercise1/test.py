@@ -1,16 +1,20 @@
+def computepay(hours, rate):
+    print('In computepay', hours, rate)
+    if hours > 40:
+        reg = rate * hours
+        otp = (hours - 40.0) * (rate * 0.5)
+        pay = reg + otp
+    else:
+        pay = hours * rate
+    #print('Returning', pay)
+    return pay
+
+
 sh = input('Enter Hours:')
 sr = input('Enter Rate:')
 fh = float(sh)
 fr = float(sr)
-#print(fh, fr)
 
-if fh>40:
-   # print ('Overtime')
-    reg = fr * fh
-    otp = (fh -40.0) * (fr * 0.5)
-   # print(reg,otp)
-    xp = reg + otp
-else:
-    #print('Regular')
-    xp = fh * fr
-print('pay' , xp)
+xp = computepay(fh, fr)
+
+print('pay', xp)
